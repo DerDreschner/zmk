@@ -146,7 +146,7 @@ int zmk_backlight_off() {
 
 int zmk_backlight_toggle() { return state.on ? zmk_backlight_off() : zmk_backlight_on(); }
 
-int zmk_backlight_update_vals(struct backlight_state *new_state) {
+int zmk_backlight_update_vals(struct backlight_state new_state) {
     state.on = new_state.on;
     state.brightness = new_state.brightness;
     return zmk_backlight_update_and_save();
