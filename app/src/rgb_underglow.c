@@ -32,9 +32,9 @@
 #include <zmk/ble.h>
 
 #if ZMK_BLE_IS_CENTRAL
-#include <zmk/split/bluetooth/central.h>
+    #include <zmk/split/bluetooth/central.h>
 #else
-#include <zmk/split/bluetooth/peripheral.h>
+    #include <zmk/split/bluetooth/peripheral.h>
 #endif
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
