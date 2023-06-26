@@ -160,7 +160,7 @@ static struct led_rgb hsb_to_rgb(struct zmk_led_hsb hsb) {
     return rgb;
 }
 
-int zmk_rgb_underglow_set_periph(struct zmk_periph_led *periph) {
+int zmk_rgb_underglow_set_periph(struct zmk_periph_led periph) {
     led_data = periph;
     LOG_DBG("Update led_data %d %d", led_data.layer, led_data.indicators);
     return 0;
