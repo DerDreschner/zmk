@@ -42,7 +42,6 @@ jobs:
         with:
           packages: g++
           version: 1.0
-          execute_install_scripts: true
       - name: Cache west modules
         uses: actions/cache@v3.0.2
         env:
