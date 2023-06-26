@@ -26,8 +26,7 @@
 
         default_layer {
             bindings = <
-                &bl BL_INC &bl BL_DEC
-                &bl BL_ON  &bl BL_OFF
+                &bl BL_TOG &bl RGB_TOG
             >;
         };
     };
