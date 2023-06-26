@@ -37,11 +37,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install g++
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: g++ g++-multilib
-          version: 1.0
       - name: Cache west modules
         uses: actions/cache@v3.0.2
         env:
