@@ -98,7 +98,7 @@ static ssize_t split_svc_update_led(struct bt_conn *conn, const struct bt_gatt_a
     if ((end_addr == sizeof(struct zmk_split_update_led_data))) {
         struct zmk_periph_led periph = {.layer = payload->layer, .indicators = payload->indicators};
         zmk_rgb_underglow_set_periph(periph);
-        LOG_DBG("Update leds with params %d and %d", periph->layer, periph->indicators);
+        LOG_DBG("Update leds with params %d and %d", periph.layer, periph.indicators);
     }
 
     return len;
@@ -119,7 +119,7 @@ static ssize_t split_svc_update_bl(struct bt_conn *conn, const struct bt_gatt_at
     if ((end_addr == sizeof(struct zmk_split_update_bl_data))) {
         struct backlight_state periph = {.brightness = payload->brightness, .on = payload->on};
         zmk_backlight_update_vals(periph);
-        LOG_DBG("Update leds with params %d and %d", periph->on, periph->brightness);
+        LOG_DBG("Update leds with params %d and %d", periph.on, periph.brightness);
     }
 
     return len;
