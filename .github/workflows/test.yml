@@ -38,11 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install g++
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: g++
-          version: 1.0
-          execute_install_scripts: true
+        run: apt-get install -y g++
       - name: Cache west modules
         uses: actions/cache@v3.0.2
         env:
