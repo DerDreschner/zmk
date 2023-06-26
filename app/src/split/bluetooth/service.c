@@ -117,7 +117,8 @@ static ssize_t split_svc_update_bl(struct bt_conn *conn, const struct bt_gatt_at
     // 1: We've gotten all the position/state/param data.
     // 2: We have a null terminated string for the behavior device label.
     if ((end_addr == sizeof(struct zmk_split_update_bl_data))) {
-        struct backlight_state periph;
+        struct backlight_state *periph;
+
         periph.brightness = payload->brightness;
         periph.on = payload->on;
         zmk_backlight_update_vals(periph);
