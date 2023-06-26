@@ -86,7 +86,9 @@ static struct rgb_underglow_state state;
 
 static struct zmk_periph_led led_data;
 
+#if IS_ENABLED(CONFIG_ZMK_SPLIT_BLE)
 static bool last_ble_state[2];
+#endif
 
 static bool triggered;
 
@@ -349,7 +351,7 @@ static void zmk_rgb_underglow_effect_kinesis() {
         }
         state.animation_step++;
     } else */
-#if IS_ENABLED(CONFIG_ZMK_SPLIT)
+#if IS_ENABLED(CONFIG_ZMK_SPLIT_BLE)
     if (!zmk_split_bt_peripheral_is_connected()) {
         pixels[0].r = CONFIG_ZMK_RGB_UNDERGLOW_BRT_SCALE * last_ble_state[1];
         pixels[0].g = 0;
