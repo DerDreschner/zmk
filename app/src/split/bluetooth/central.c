@@ -428,8 +428,9 @@ static bool split_central_eir_found(struct bt_data *data, void *user_data) {
                     LOG_ERR("Update phy conn failed (err %d)", err);
                 }
             } else {
-                param = BT_LE_CONN_PARAM(CONFIG_ZMK_SPLIT_BLE_PREF_INT, CONFIG_ZMK_SPLIT_BLE_PREF_INT,
-                                         CONFIG_ZMK_SPLIT_BLE_PREF_LATENCY, CONFIG_ZMK_SPLIT_BLE_PREF_TIMEOUT);
+                param = BT_LE_CONN_PARAM(
+                    CONFIG_ZMK_SPLIT_BLE_PREF_INT, CONFIG_ZMK_SPLIT_BLE_PREF_INT,
+                    CONFIG_ZMK_SPLIT_BLE_PREF_LATENCY, CONFIG_ZMK_SPLIT_BLE_PREF_TIMEOUT);
 
                 LOG_DBG("Initiating new connnection");
 
