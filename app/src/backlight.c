@@ -40,6 +40,11 @@ static const struct device *const backlight_dev = DEVICE_DT_GET(DT_CHOSEN(zmk_ba
 
 #define BRT_MAX 100
 
+struct backlight_state {
+    uint8_t brightness;
+    bool on;
+};
+
 static struct backlight_state state = {.brightness = CONFIG_ZMK_BACKLIGHT_BRT_START,
                                        .on = IS_ENABLED(CONFIG_ZMK_BACKLIGHT_ON_START)};
 
